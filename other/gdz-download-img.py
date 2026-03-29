@@ -10,5 +10,5 @@ img_raw = img_selector[0].attrib['src']
 print(img_raw)
 
 response_img = requests.get("https:" + img_raw)
-with open('gdz.jpg', 'wb') as w:
+with open('other/gdz.jpg', 'wb') as w:
     w.write(response_img.content)
