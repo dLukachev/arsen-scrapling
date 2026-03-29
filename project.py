@@ -12,11 +12,11 @@ def finder(query: str):
     link_need = []
 
     for link in links:
-        link_need.append(link.parent.css('a::attr(href)').getall())
+        link_need.append(link.parent.css('a::attr(href)').getall()) # type: ignore
     
     for i, (title, link) in enumerate(zip(titles, link_need), 1):
         print(f"{i}. {title} - {link}")
 
 
 if __name__ == "__main__":
-    finder('ddrxg', limit=15)
+    finder('ddrxg')
