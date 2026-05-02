@@ -17,5 +17,5 @@ with StealthySession(
             "price": price_text,
         })
 
-with open('avito.txt', 'a') as hui:
-    hui.write(str(items))
+with open('avito.txt', 'a') as f:
+    f.write(str(items))

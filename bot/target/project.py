@@ -10,7 +10,7 @@ async def finder(query: str) -> dict:
 
     links = []
     for selector in links_selector:
-        links.append(selector.parent.css("a::attr(href)").get())
+        links.append(selector.parent.css("button[data-testid='favorite-btn']").get())
 
     response = {}
 
