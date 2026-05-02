@@ -1,9 +1,12 @@
 from scrapling.fetchers import AsyncStealthySession
 
+
 async def finder(query: str) -> dict:
     url = f"https://www.google.com/search?q={query.replace(' ', '+')}"
 
-    async with AsyncStealthySession(user_data_dir="other/profile", headless=True, real_chrome=True) as session:
+    async with AsyncStealthySession(
+        user_data_dir="other/profile", headless=True, real_chrome=True
+    ) as session:
         r = await session.fetch(url, wait_selector="h3")
         titles = r.css("h3::text").getall()
         links_selector = r.css("h3")
@@ -16,5 +19,5 @@ async def finder(query: str) -> dict:
 
     for i, (title, link) in enumerate(zip(titles, links)):
         response[i] = (title, link)
-    
+
     return response

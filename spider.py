@@ -1,5 +1,6 @@
 from scrapling.spiders import Spider, Response, Request
 
+
 class MySpider(Spider):
     name = "get-all-text"
     start_urls = [
