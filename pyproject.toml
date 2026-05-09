@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "aiogram>=3.26.0",
     "black>=26.3.1",
+    "gspread>=6.2.1",
     "python-dotenv>=1.2.2",
     "requests>=2.33.0",
     "scrapling[all,fetchers]>=0.4.2",
